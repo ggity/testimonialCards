@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    /* boje za kartice */
+    /* --card-color-light: ; */
+    --card-color-dark: rgba(0, 0, 0, 0.8);
+
+    /* boje za tekstove */
+    --card-text-light: whitesmoke;
+    /* --card-text-dark: ; */
+
+    /* boje za naslove */
+    --card-orange-color: orange;
+    --card-orange-color-light: wheat;
+    --card-zanimanje-color: black;
+
+    /* boje za linkove */
+    /* --card-link-color: ; */
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.testimonial-container {
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+}
+
+.testimonial-card {
+    padding: 2em;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    box-shadow: 0 0 50px -1px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.testimonial-card:nth-of-type(even) {
+    background-color: var(--card-color-dark);
+    color: var(--card-text-light);
+}
+
+.testimonial-card>p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+.testimonial-card>img {
+    background-color: var(--card-orange-color-light);
+    margin-top: 50px;
+    width: 40%;
+    border-radius: 100%;
+    border: 5px solid var(--card-orange-color-light);
+}
+
+.testimonial-card>h3 {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.3em;
+    font-weight: 900;
+    color: var(--card-orange-color);
+}
+
+.testimonial-card>h4 {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.1em;
+    font-weight: 900;
+    z-index: 2;
+}
+
+/* dodavanje navodnika */
+.testimonial-card::before {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    content: open-quote;
+    font-size: 10em;
+    font-weight: bold;
+    height: max-content;
+    width: max-content;
+    line-height: 0.5;
+    position: absolute;
+    top: calc(0 + .2em);
+    left: 0;
+    color: var(--card-orange-color);
+    z-index: 1;
+}
+
+/* stilizovanje talasica na dnu kartice */
+.testimonial-wave {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.testimonial-wave>path {
+    fill: var(--card-orange-color);
+}
